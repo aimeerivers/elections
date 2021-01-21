@@ -1,0 +1,17 @@
+.blob.republican {
+  background-color: #BB0000BB;
+}
+
+.blob.democrat {
+  background-color: #1122CCBB;
+}
+
+.blob {
+  width: 18px;
+  height: 18px;
+  border-radius: 20%;
+}
+
+.region-label {
+  font-size: 1.2em;
+}

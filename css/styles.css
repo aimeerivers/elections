@@ -1,0 +1,32 @@
+body {
+  background-color: #EEE;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+#map {
+  position: relative;
+  margin: 0 auto;
+}
+
+.blob {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: gray;
+}
+
+.region-label {
+  position: absolute;
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #EEE;
+  -webkit-text-stroke:  1px #000;
+  text-shadow: 1px 1px 10px #000;
+}
