@@ -1,5 +1,5 @@
 # Elections
 
-Election results as Cartograms, configurable with JS and CSS.
+Election results as cartograms, configurable with JS and CSS.
 
 Please see https://sermoa.github.io/elections
