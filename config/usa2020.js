@@ -1,4 +1,6 @@
 let multiplier = 17;
+let resultsEndpoint = "https://sermoa.github.io/election-results-api/usa2020.json";
+let resultsRefreshSeconds = 10;
 
 let regions = [
   {
@@ -6,7 +8,6 @@ let regions = [
     short: "AK",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [0, 0], [1, 0],
                   [1, 1]
@@ -19,7 +20,6 @@ let regions = [
     short: "WA",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
                           [6, 3], [7, 3],
           [4, 4], [5, 4], [6, 4], [7, 4],
@@ -34,7 +34,6 @@ let regions = [
     short: "OR",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [3, 7],
           [3, 8], [4, 8], [5, 8],
@@ -48,7 +47,6 @@ let regions = [
     short: "NV",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [7, 9], [8, 9],
           [7, 10], [8, 10],
@@ -62,7 +60,6 @@ let regions = [
     short: "CA",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [3, 11], [4, 11], [5, 11],
           [3, 12], [4, 12], [5, 12],
@@ -86,7 +83,6 @@ let regions = [
     short: "HI",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [2, 29],
           [3, 30],
@@ -100,7 +96,6 @@ let regions = [
     short: "ID",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [9, 5],
           [9, 6],
@@ -114,7 +109,6 @@ let regions = [
     short: "UT",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [10, 10], [11, 10],
           [10, 11], [11, 11],
@@ -128,7 +122,6 @@ let regions = [
     short: "AZ",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [9, 14], [10, 14], [11, 14],
           [9, 15], [10, 15], [11, 15],
@@ -143,7 +136,6 @@ let regions = [
     short: "MT",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [12, 5], [13, 5], [14, 5]
         ]
@@ -155,7 +147,6 @@ let regions = [
     short: "WY",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [12, 7], [13, 7], [14, 7]
         ]
@@ -167,7 +158,6 @@ let regions = [
     short: "CO",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [13, 10], [14, 10], [15, 10],
           [13, 11], [14, 11], [15, 11],
@@ -181,7 +171,6 @@ let regions = [
     short: "NM",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [13, 14], [14, 14],
           [13, 15], [14, 15],
@@ -195,7 +184,6 @@ let regions = [
     short: "TX",
     areas: [
       {
-        result: 'republican',
         coordinates: [
                               [14, 18], [15, 18],
                               [14, 19], [15, 19], [16, 19], [17, 19], [18, 19], [19, 19],
@@ -214,7 +202,6 @@ let regions = [
     short: "ND",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [16, 5], [17, 5], [18, 5]
         ]
@@ -226,7 +213,6 @@ let regions = [
     short: "SD",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [16, 7], [17, 7], [18, 7]
         ]
@@ -238,14 +224,12 @@ let regions = [
     short: "NE",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [17, 10], [18, 10],
                     [18, 11], [19, 11]
         ]
       },
       {
-        result: 'democrat',
         coordinates: [
           [19, 10]
         ]
@@ -257,7 +241,6 @@ let regions = [
     short: "KS",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [17, 13], [18, 13], [19, 13],
           [17, 14], [18, 14], [19, 14]
@@ -270,7 +253,6 @@ let regions = [
     short: "OK",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [16, 16], [17, 16], [18, 16], [19, 16],
                     [17, 17], [18, 17], [19, 17]
@@ -283,7 +265,6 @@ let regions = [
     short: "MN",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [20, 4], [21, 4], [22, 4],
           [20, 5], [21, 5],
@@ -298,7 +279,6 @@ let regions = [
     short: "IA",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [21, 9], [22, 9],
           [21, 10], [22, 10],
@@ -312,7 +292,6 @@ let regions = [
     short: "MO",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [21, 13], [22, 13],
           [21, 14], [22, 14],
@@ -327,7 +306,6 @@ let regions = [
     short: "AR",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [21, 18], [22, 18], [23, 18],
           [21, 19], [22, 19],
@@ -341,7 +319,6 @@ let regions = [
     short: "LA",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [21, 22], [22, 22],
           [21, 23], [22, 23], [23, 23],
@@ -355,7 +332,6 @@ let regions = [
     short: "WI",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [24, 5], [25, 5],
           [24, 6], [25, 6], [26, 6],
@@ -370,7 +346,6 @@ let regions = [
     short: "IL",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [24, 10], [25, 10], [26, 10],
           [24, 11], [25, 11], [26, 11],
@@ -389,7 +364,6 @@ let regions = [
     short: "TN",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [25, 19], [26, 19], [27, 19], [28, 19], [29, 19], [30, 19],
           [25, 20], [26, 20], [27, 20], [28, 20], [29, 20]
@@ -402,7 +376,6 @@ let regions = [
     short: "MS",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [25, 22], [26, 22],
           [25, 23], [26, 23],
@@ -416,7 +389,6 @@ let regions = [
     short: "MI",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [28, 4], [29, 4],
                    [29, 5], [30, 5], [31, 5],
@@ -432,7 +404,6 @@ let regions = [
     short: "IN",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [28, 10], [29, 10],
           [28, 11], [29, 11],
@@ -449,7 +420,6 @@ let regions = [
     short: "KY",
     areas: [
       {
-        result: 'republican',
         coordinates: [
                               [30, 16], [31, 16], [32, 16],
           [28, 17], [29, 17], [30, 17], [31, 17], [32, 17]
@@ -462,7 +432,6 @@ let regions = [
     short: "AL",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [28, 22], [29, 22], [30, 22],
           [28, 23], [29, 23], [30, 23],
@@ -476,7 +445,6 @@ let regions = [
     short: "OH",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [31, 10], [32, 10], [33, 10], [34, 10],
           [31, 11], [32, 11], [33, 11], [34, 11],
@@ -492,7 +460,6 @@ let regions = [
     short: "GA",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [32, 20], [33, 20],
           [32, 21], [33, 21], [34, 21],
@@ -508,7 +475,6 @@ let regions = [
     short: "FL",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [31, 26], [32, 26], [33, 26], [34, 26], [35, 26], [36, 26], [37, 26], [38, 26],
                                                   [35, 27], [36, 27], [37, 27], [38, 27],
@@ -526,7 +492,6 @@ let regions = [
     short: "NY",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
                                                        [42, 3], [43, 3],
                                               [41, 4], [42, 4], [43, 4],
@@ -544,7 +509,6 @@ let regions = [
     short: "PA",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [36, 10], [37, 10], [38, 10], [39, 10], [40, 10], [41, 10],
           [36, 11], [37, 11], [38, 11], [39, 11], [40, 11], [41, 11], [42, 11],
@@ -558,7 +522,6 @@ let regions = [
     short: "WV",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [35, 15], [36, 15], [37, 15],
           [35, 16], [36, 16]
@@ -571,7 +534,6 @@ let regions = [
     short: "VA",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
                                                             [39, 16], [40, 16],
                                                   [38, 17], [39, 17], [40, 17],
@@ -585,7 +547,6 @@ let regions = [
     short: "NC",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [36, 20], [37, 20], [38, 20], [39, 20], [40, 20], [41, 20], [42, 20], [43, 20],
           [36, 21], [37, 21], [38, 21], [39, 21], [40, 21], [41, 21], [42, 21]
@@ -598,7 +559,6 @@ let regions = [
     short: "SC",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [37, 23], [38, 23], [39, 23], [40, 23], [41, 23],
           [37, 24], [38, 24], [39, 24], [40, 24]
@@ -611,7 +571,6 @@ let regions = [
     short: "MD",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [39, 14], [40, 14], [41, 14], [42, 14],
                                         [42, 15], [43, 15], [44, 15],
@@ -625,7 +584,6 @@ let regions = [
     short: "DC",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [43, 18], [44, 18], [45, 18]
         ]
@@ -637,7 +595,6 @@ let regions = [
     short: "DE",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [46, 16], [47, 16],
                     [47, 17]
@@ -650,7 +607,6 @@ let regions = [
     short: "NJ",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [44, 11], [45, 11], [46, 11], [47, 11],
           [44, 12], [45, 12], [46, 12], [47, 12],
@@ -665,7 +621,6 @@ let regions = [
     short: "CT",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [45, 6], [46, 6], [47, 6],
           [45, 7], [46, 7], [47, 7],
@@ -679,7 +634,6 @@ let regions = [
     short: "RI",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [49, 6], [50, 6],
           [49, 7], [50, 7]
@@ -692,7 +646,6 @@ let regions = [
     short: "MA",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [45, 3], [46, 3], [47, 3], [48, 3], [49, 3],
           [45, 4], [46, 4], [47, 4], [48, 4], [49, 4], [50, 4]
@@ -705,7 +658,6 @@ let regions = [
     short: "VT",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
                    [45, 0],
           [44, 1], [45, 1]
@@ -718,7 +670,6 @@ let regions = [
     short: "NH",
     areas: [
       {
-        result: 'democrat',
         coordinates: [
           [47, 0], [48, 0],
           [47, 1], [48, 1]
@@ -731,14 +682,12 @@ let regions = [
     short: "ME",
     areas: [
       {
-        result: 'republican',
         coordinates: [
           [50, 0],
           [50, 1], [51, 1]
         ]
       },
       {
-        result: 'democrat',
         coordinates: [
           [51, 0]
         ]
