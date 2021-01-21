@@ -1,5 +1,3 @@
-let title = "USA Election 2020";
-
 let multiplier = 17;
 
 let regions = [

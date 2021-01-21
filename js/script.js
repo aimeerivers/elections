@@ -3,11 +3,6 @@ let mapBox = getMapBoundingBox(regions);
 map.style.width = multiplier * (1 + mapBox[1][0] - mapBox[0][0]) + "px";
 map.style.height = multiplier * (1 + mapBox[1][1] - mapBox[0][1]) + "px";
 
-if(title) {
-  document.getElementById('title').innerText = title;
-  document.title = title;
-}
-
 regions.forEach(region => {
   region.areas.forEach(area => {
     area.coordinates.forEach(coordinate => {
