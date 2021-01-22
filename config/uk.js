@@ -1,7 +1,5 @@
 let xMultiplier = 18;
 let yMultiplier = 10;
-let resultsEndpoint = "https://sermoa.github.io/election-results-api/uk2019.json";
-let resultsRefreshSeconds = 10;
 
 let regions = [
 

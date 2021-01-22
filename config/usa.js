@@ -1,7 +1,5 @@
 let xMultiplier = 17;
 let yMultiplier = 17;
-let resultsEndpoint = "https://sermoa.github.io/election-results-api/usa2020.json";
-let resultsRefreshSeconds = 10;
 
 let regions = [
   {
