@@ -15,6 +15,17 @@ let regions = [
   { name: "Upper Bann", areas: [{ coordinates: [[1, 30]] }] },
   { name: "Mid Ulster", areas: [{ coordinates: [[2, 29]] }] },
   { name: "North Antrim", areas: [{ coordinates: [[3, 28]] }] },
+  { name: "Lagan Valley", areas: [{ coordinates: [[2, 31]] }] },
+  { name: "South Antrim", areas: [{ coordinates: [[3, 30]] }] },
+  { name: "East Antrim", areas: [{ coordinates: [[4, 29]] }] },
+  { name: "Newry & Armagh", areas: [{ coordinates: [[1, 34]] }] },
+  { name: "Belfast West", areas: [{ coordinates: [[2, 33]] }] },
+  { name: "Belfast North", areas: [{ coordinates: [[3, 32]] }] },
+  { name: "South Down", areas: [{ coordinates: [[2, 35]] }] },
+  { name: "Belfast South", areas: [{ coordinates: [[3, 34]] }] },
+  { name: "Belfast East", areas: [{ coordinates: [[4, 33]] }] },
+  { name: "Strangford", areas: [{ coordinates: [[3, 36]] }] },
+  { name: "North Down", areas: [{ coordinates: [[4, 35]] }] },
 
   // SCOTLAND
 
