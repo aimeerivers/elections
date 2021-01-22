@@ -14,10 +14,12 @@
   <div id="map"></div>
   
   <script>
-    let resultsEndpoint = "https://sermoa.github.io/election-results-api/uk2019.json";
-    let resultsRefreshSeconds = 10;
+    window.$elections = {
+      endpoint: "https://sermoa.github.io/election-results-api/uk2019.json",
+      refresh: 10
+    }
   </script>
-  
+
   <script src="config/uk.js"></script>
   <script src="js/script.js"></script>
 </body>

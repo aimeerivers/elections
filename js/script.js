@@ -3,6 +3,9 @@ let mapBox = getMapBoundingBox(regions);
 map.style.width = xMultiplier * (1 + mapBox[1][0] - mapBox[0][0]) + "px";
 map.style.height = yMultiplier * (1 + mapBox[1][1] - mapBox[0][1]) + "px";
 
+let resultsEndpoint = window.$elections.endpoint;
+let resultsRefreshSeconds = window.$elections.refresh;
+
 regions.forEach(region => {
   let areaNumber = 0;
   region.areas.forEach(area => {
