@@ -1,0 +1,15 @@
+.blob.con { background-color: #0575c9; }
+.blob.dup { background-color: #b51c4b; }
+.blob.lab { background-color: #e91d0e; }
+.blob.ld { background-color: #efac18; }
+.blob.pc { background-color: #13e594; }
+.blob.sdlp { background-color: #224922; }
+.blob.sf { background-color: #159b78; }
+.blob.snp { background-color: #f8ed2e; }
+
+.blob {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  border: 1px solid #888;
+}

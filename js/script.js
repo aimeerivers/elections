@@ -19,17 +19,19 @@ regions.forEach(region => {
       map.appendChild(blob);
     });
   });
-  box = getRegionBoundingBox(region);
-  label = document.createElement("div");
-  label.classList.add("region-label");
-  label.classList.add(slugify(region.name));
-  label.innerText = region.short;
-  label.style.left = xMultiplier * box[0][0] + "px";
-  label.style.top = yMultiplier * box[0][1] + "px";
-  label.style.width = xMultiplier * (1 + box[1][0] - box[0][0]) + "px";
-  label.style.height = yMultiplier * (1 + box[1][1] - box[0][1]) + "px";
-  label.style.lineHeight = yMultiplier * (1 + box[1][1] - box[0][1]) + "px";
-  map.appendChild(label);
+  if(region.short !== undefined) {
+    box = getRegionBoundingBox(region);
+    label = document.createElement("div");
+    label.classList.add("region-label");
+    label.classList.add(slugify(region.name));
+    label.innerText = region.short;
+    label.style.left = xMultiplier * box[0][0] + "px";
+    label.style.top = yMultiplier * box[0][1] + "px";
+    label.style.width = xMultiplier * (1 + box[1][0] - box[0][0]) + "px";
+    label.style.height = yMultiplier * (1 + box[1][1] - box[0][1]) + "px";
+    label.style.lineHeight = yMultiplier * (1 + box[1][1] - box[0][1]) + "px";
+    map.appendChild(label);
+  }
 });
 
 function getMapBoundingBox(regions) {
