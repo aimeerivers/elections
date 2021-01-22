@@ -77,11 +77,15 @@ function updateData() {
   dataUpdate.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       let response = JSON.parse(this.responseText);
+      let delay = 0;
       for(let regionName in response) {
-        document.querySelectorAll('.' + slugify(regionName)).forEach(function(region) {
-          region.classList.add(response[regionName].toLowerCase());
-          region.title = regionName + " - " + response[regionName];
-        });
+        delay += window.$elections.colourDelay;
+        setTimeout(() => {
+          document.querySelectorAll('.' + slugify(regionName)).forEach(function(region) {
+            region.classList.add(response[regionName].toLowerCase());
+            region.title = regionName + " - " + response[regionName];
+          });
+        }, delay);
       }
     }
   }
