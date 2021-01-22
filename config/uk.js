@@ -1,5 +1,8 @@
-let xMultiplier = 18;
-let yMultiplier = 10;
+let gridX = 18;
+let gridY = 10;
+
+let blobWidth = 20;
+let blobHeight = 20;
 
 let regions = [
 

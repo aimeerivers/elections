@@ -1,7 +1,7 @@
 let map = document.getElementById("map");
 let mapBox = getMapBoundingBox(regions);
-map.style.width = xMultiplier * (1 + mapBox[1][0] - mapBox[0][0]) + "px";
-map.style.height = yMultiplier * (1 + mapBox[1][1] - mapBox[0][1]) + "px";
+map.style.width = gridX * (1 + mapBox[1][0] - mapBox[0][0]) + "px";
+map.style.height = gridY * (1 + mapBox[1][1] - mapBox[0][1]) + "px";
 
 let resultsEndpoint = window.$elections.endpoint;
 let resultsRefreshSeconds = window.$elections.refresh;
@@ -14,27 +14,26 @@ regions.forEach(region => {
       blob = document.createElement("span");
       blob.classList.add("blob");
       blob.classList.add(slugify(region.name, areaNumber));
-      blob.style.left = xMultiplier * coordinate[0] + "px";
-      blob.style.top = yMultiplier * coordinate[1] + "px";
+      blob.style.left = gridX * coordinate[0] + "px";
+      blob.style.top = gridY * coordinate[1] + "px";
       if(area.result) {
         blob.classList.add(area.result);
       }
       map.appendChild(blob);
     });
   });
-  if(region.short !== undefined) {
-    box = getRegionBoundingBox(region);
-    label = document.createElement("div");
-    label.classList.add("region-label");
-    label.classList.add(slugify(region.name));
-    label.innerText = region.short;
-    label.style.left = xMultiplier * box[0][0] + "px";
-    label.style.top = yMultiplier * box[0][1] + "px";
-    label.style.width = xMultiplier * (1 + box[1][0] - box[0][0]) + "px";
-    label.style.height = yMultiplier * (1 + box[1][1] - box[0][1]) + "px";
-    label.style.lineHeight = yMultiplier * (1 + box[1][1] - box[0][1]) + "px";
-    map.appendChild(label);
-  }
+
+  box = getRegionBoundingBox(region);
+  label = document.createElement("div");
+  label.classList.add("region-label");
+  label.classList.add(slugify(region.name));
+  label.innerText = (region.short == undefined ? "" : region.short);
+  label.style.left = gridX * box[0][0] + "px";
+  label.style.top = gridY * box[0][1] + "px";
+  label.style.width = blobWidth * (1 + box[1][0] - box[0][0]) + "px";
+  label.style.height = blobHeight * (1 + box[1][1] - box[0][1]) + "px";
+  label.style.lineHeight = blobHeight * (1 + box[1][1] - box[0][1]) + "px";
+  map.appendChild(label);
 });
 
 function getMapBoundingBox(regions) {

@@ -1,5 +1,8 @@
-let xMultiplier = 17;
-let yMultiplier = 17;
+let gridX = 17;
+let gridY = 17;
+
+let blobWidth = 18;
+let blobHeight = 18;
 
 let regions = [
   {
