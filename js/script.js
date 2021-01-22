@@ -28,6 +28,7 @@ regions.forEach(region => {
   label.classList.add("region-label");
   label.classList.add(slugify(region.name));
   label.innerText = (region.short == undefined ? "" : region.short);
+  label.title = region.name;
   label.style.left = gridX * box[0][0] + "px";
   label.style.top = gridY * box[0][1] + "px";
   label.style.width = blobWidth * (1 + box[1][0] - box[0][0]) + "px";
@@ -78,7 +79,8 @@ function updateData() {
       let response = JSON.parse(this.responseText);
       for(let regionName in response) {
         document.querySelectorAll('.' + slugify(regionName)).forEach(function(region) {
-          region.classList.add(response[regionName]);
+          region.classList.add(response[regionName].toLowerCase());
+          region.title = regionName + " - " + response[regionName];
         });
       }
     }

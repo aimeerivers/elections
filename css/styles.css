@@ -38,3 +38,7 @@ ul.index {
   -webkit-text-stroke:  1px #000;
   text-shadow: 1px 1px 10px #000;
 }
+
+.region-label:hover {
+  cursor: pointer;
+}
