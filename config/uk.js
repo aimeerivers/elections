@@ -153,6 +153,21 @@ let regions = [
   { name: "Richmond [Yorks]", areas: [{ coordinates: [[21, 26]] }] },
   { name: "Redcar", areas: [{ coordinates: [[22, 25]] }] },
   { name: "Middlesbrough South & Cleveland East", areas: [{ coordinates: [[23, 24]] }] },
+  { name: "Bootle", areas: [{ coordinates: [[9, 40]] }] },
+  { name: "Sefton Central", areas: [{ coordinates: [[10, 39]] }] },
+  { name: "Liverpool Walton", areas: [{ coordinates: [[11, 38]] }] },
+  { name: "Bolton West", areas: [{ coordinates: [[12, 37]] }] },
+  { name: "Bolton South East", areas: [{ coordinates: [[13, 36]] }] },
+  { name: "Oldham West & Royton", areas: [{ coordinates: [[14, 35]] }] },
+  { name: "Oldham East & Saddleworth", areas: [{ coordinates: [[15, 34]] }] },
+  { name: "Colne Valley", areas: [{ coordinates: [[16, 33]] }] },
+  { name: "Calder Valley", areas: [{ coordinates: [[17, 32]] }] },
+  { name: "Shipley", areas: [{ coordinates: [[18, 31]] }] },
+  { name: "Leeds North West", areas: [{ coordinates: [[19, 30]] }] },
+  { name: "Leeds West", areas: [{ coordinates: [[20, 29]] }] },
+  { name: "Selby & Ainsty", areas: [{ coordinates: [[21, 28]] }] },
+  { name: "Thirsk & Malton", areas: [{ coordinates: [[22, 27]] }] },
+  { name: "Scarborough & Whitby", areas: [{ coordinates: [[23, 26]] }] },
 
   // WALES
 
