@@ -1,12 +1,14 @@
 .blob.apni { background-color: #d6b429; }
 .blob.con { background-color: #0575c9; }
 .blob.dup { background-color: #b51c4b; }
+.blob.grn { background-color: #5fb25f; }
 .blob.lab { background-color: #e91d0e; }
 .blob.ld { background-color: #efac18; }
 .blob.pc { background-color: #13e594; }
 .blob.sdlp { background-color: #224922; }
 .blob.sf { background-color: #159b78; }
 .blob.snp { background-color: #f8ed2e; }
+.blob.spe { background-color: #d4cfbe; }
 
 .blob {
   width: 19px;
