@@ -72,7 +72,6 @@ function getRegionBoundingBox(region) {
 updateData();
 
 function updateData() {
-  console.log("update");
   var dataUpdate = new XMLHttpRequest();
   dataUpdate.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
